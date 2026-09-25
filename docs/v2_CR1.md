@@ -17,10 +17,12 @@ L'objectif est de fournir un Compte rendu détaillé du travail fourni. Ce trava
 | ID | Tâche Macro | Complexité estimée | Durée estimée | Responsable (Affectation a priori) |
 | :--- | :--- | :--- | :--- | :--- |
 | T1 | Appropriation du jeu | Faible | 3h | Tous les membres |
+| T1bis | Partie réelle après le TD pour approfondir la compréhension des règles et des mécanismes du jeu | Faible | 1h~2h | Zeineb Mokded - Hans Vinçon - Victor Pottier |
 | T2 | Note en Gdoc du travail fourni | Elever | Toute la semaine (travail étaler) | Hans Vinçon |
 | T3 | Configuration de l'environnement Git et squelette projet | Basse | 1h | Ulysse Virlogeux--Chabaille |
 | T4 | Brainstorming de l'Analyse Conceptuel (AC) | Haute | 3h | Tous les membres |
 | T5 | Mise sur papier des concepts du jeu/AC | Basse | durant le brainstorming | Hans Vinçon - Ulysse Virlogeux--Chabaille |
+| T5bis | Mise au propre du GDoc : clarification des règles, rédaction et clarification du mode solo de Tybor et création de l’arbre décisionnel | Moyenne | 2h30 | Zeineb Mokded |
 | T6 | Redaction propre du CR1 + Analyse conceptuel | Elever | 2~3h | Ulysse Virlogeux--Chabaille |
 | T7 | Review du CR | Basse | 30min | Hans Vinçon - Victor Pottier - Zeineb Mokded |
 
@@ -39,7 +41,7 @@ Cette organisation nous a ainsi permis de centraliser les informations important
 * **Ulysse Virlogeux--Chabaille** : Malgré une maladie durant la première semaine, il a principalement pris en charge l’organisation du groupe. Il a notamment mis en place le repository GitHub et le GitHub Project afin de structurer le travail et de faciliter la répartition des tâches. Il a également défini l’objectif et le cadre de l’analyse conceptuelle, permettant ainsi au groupe d’avoir une direction claire pour cette partie du projet, et a organisé le meeting de brainstomring sur l'analyse conceptuel. Mais il n'a pas fourni de travail concret sur la dite-analyse ni aider à la rédaction du Gdoc à cause de sa maladie.
 * **Hans Vinçon** : Il a créé et tenu à jour le Google Docs général du groupe. Il y a consigné l’ensemble des informations récoltées et des éléments produits au cours du projet, faisant de ce document le principal support de référence pour le groupe. Les différents membres pouvaient ainsi s’y référer pour retrouver facilement les informations et suivre l’avancement du travail. Hans a également participé à l’analyse conceptuelle.
 * **Victor Pottier** : Il a participé à la rédaction et à la mise à jour du Google Docs en apportant les informations qu’il avait recueillies. Il a également travaillé sur l’analyse conceptuelle avec Hans Vinçon et les autres membres du groupe.
-* **Zeineb Mokded** : Elle a participé à la rédaction et à la mise à jour du Google Docs en y ajoutant les informations recueillies au cours du travail. Elle a également contribué à l’élaboration de l’analyse conceptuelle avec les autres membres du groupe.
+* **Zeineb Mokded** : Elle a participé à la rédaction et à la mise à jour du Google Docs. Elle a notamment clarifié et réorganisé les règles du jeu, rédigé la partie sur le fonctionnement du mode solo contre Tybor et réalisé l’arbre décisionnel associé. Elle a également contribué à l’élaboration de l’analyse conceptuelle avec les autres membres du groupe.
 
 ---
 
