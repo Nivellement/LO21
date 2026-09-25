@@ -12,7 +12,7 @@
 
 ## 1. Liste des tâches et durée pour atteindre l'objectif de la semaine 1
 
-L'objectif est de fournir un COmpte rendu détaillé du travail fourni. Ce travail consistait à établir une analyse conceptuel complète pour débroussailler le terrain de l'UML (semaine 2).
+L'objectif est de fournir un Compte rendu détaillé du travail fourni. Ce travail consistait à établir une analyse conceptuel complète pour débroussailler le terrain de l'UML (semaine 2).
 
 | ID | Tâche Macro | Complexité estimée | Durée estimée | Responsable (Affectation a priori) |
 | :--- | :--- | :--- | :--- | :--- |
