@@ -153,7 +153,7 @@ SCORE
 ### Vue d'ensemble
 
 Les concepts identifiés peuvent finalement être regroupés de la manière suivante :
-
+*Notons que ce ne sont que des prémisses de liaison. nous ferons un véritable UML la semaine suivante.*
 ```text
 PARTIE
  │
