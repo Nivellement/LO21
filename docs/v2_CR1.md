@@ -179,3 +179,35 @@ PARTIE
       ├── CARTE RESSOURCE
       └── CARTE DORURE
 ```
+
+---
+
+## 4. Planification et objectifs pour le Compte Rendu 2 (Semaine du 3 novembre)
+
+Pour le second livrable, l'objectif est d'aboutir à un début d'architecture concrète et d'implémentation. Notre stratégie repose sur la mise en place préalable de la persistance des données du jeu (gestion de bases de données / tables relationnelles avec Clés Primaires (PK) et Clés Étrangères (FK)), indispensable avant d'attaquer la logique métier complète.
+
+Afin de garantir l'intégrité référentielle, les bases indépendantes (sans FK) sont conçues et vérifiées avant les bases dépendantes (qui contiennent des FK pointant vers les premières).
+
+### 4.1. Tableau prévisionnel des tâches jusqu'au CR2
+
+| ID | Tâche / Sous-tâche | Priorité | Complexité | Dépendances | Durée estimée | Responsable (Affectation a priori) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **T8** | **Brainstorming UML & Schéma relationnel BDD**<br>• Identification des tables, attributs, PK et FK<br>• Établissement des liaisons entité-association | Indispensable | Haute | T4 | 4 h | Tous les membres |
+| **T9** | **Phase de maturation & Rédaction propre de l'UML**<br>• Sessions de jeu complémentaires pour réfléchir et se laisser le temps de valider notre UML<br>• Ajustement et validation collégiale du modèle conceptuel si personne n'a rien à ajouter + Création du fichier UML | Moyenne | Basse | T8 | 2 d | Tous les membres + Ulysse Virlogeux--Chabaille (pour redaction) |
+| **T10** | **Création BDD Joueurs**<br>• Schéma de la table Joueur (PK `id_joueur`, pseudo, couleur de pion, etc.) | Indispensable | Moyenne | T9 | 2 h | Hans Vinçon |
+| **T11** | **Review BDD Joueurs**<br>• Tests d'insertion, mise à jour et suppression de profils (directement en terminal) pour valider le travail | Indispensable | Basse | T10 | 1 h | Victor Pottier |
+| **T12** | **Création BDD Cartes (Référentiel)**<br>• Schéma (PK `id_carte`, type, coins recto/verso, ressources fournies, coût de pose, points) | Indispensable | Haute | T9 | 4 h | Victor Pottier |
+| **T13** | **Review BDD Cartes**<br>• Insertion d'un échantillon représentatif de cartes de chaque règne pour valider (directement en terminal) | Indispensable | Basse | T12 | 2 h | Zeineb Mokded |
+| **T14** | **Création BDD Objectifs (Référentiel)**<br>• Schéma (PK `id_objectif`, type de condition [motif/collection], points accordés) | Indispensable | Haute | T9 | 3 h | Zeineb Mokded |
+| **T15** | **Review BDD Objectifs**<br>• Tests d'insertion et validation des types de critères d'objectifs (directement en terminal) | Indispensable | Basse | T14 | 1 h 30 | Hans Vinçon |
+| **T16** | **Création BDD État de Partie & Manuscrit**<br>• Schéma dépendant (PK `id_action`, FK `id_partie`, FK `id_joueur`, FK `id_carte`, position `(x, y, z)`, face visible) | Indispensable | Haute | T10, T12, T14 | 5 h | Ulysse Virlogeux--Chabaille |
+| **T17** | **Review BDD État de Partie & Manuscrit**<br>• Vérification des contraintes d'intégrité référentielle (rejet si FK invalide) et tests d'ajouts  | Indispensable | Basse | T16 | 2 h | Hans Vinçon |
+| **T18** | **Développement des fonctions de contrôle BDD (Gestion globale)**<br>• Implémentation en C++ de fonction d'accès aux données (méthodes d'ajout, suppression, consultation programmatique sans passer par le terminal) | Indispensable | Haute | T11, T13, T15, T17 | 8 h ? | Victor Pottier, Ulysse Virlogeux--Chabaille |
+| **T19** | **Review et tests des fonctions de contrôle BDD**<br>• Validation du bon fonctionnement des méthodes C++ sur l'ensemble des BDD créées | Importante | Moyenne | T18 | 1 h | Zeineb Mokded, Hans Vinçon |
+| **T20** | **Rédaction et mise en forme du Compte Rendu 2**<br>• Création du rapport: diagrammes UML de classes et schéma BDD | Indispensable | Moyenne | T18, T19 | 4 h | Responsable CR2 (rotation) |
+| **T21** | **Réunion final**<br>• Relecture collective, mise à jour du GitHub Project + repas récompense pour le travail bien accompli en groupe + lecture de tout les membres du CR2| Basse | Basse | T20 | 1 h 30 | Tous les membres |
+
+### 4.2. Synthèse de la logique d'ordonnancement
+* **Gestion des dépendances PK / FK :** Les tables de référence (`Joueur`, `Carte`, `Objectif`) sont modélisées et testées de avant d'aborder la table de l'état du jeu (`Manuscrit/Partie`), évitant ainsi tout blocage lors de la définition des contraintes relationnelles.
+* **Assurance qualité par "Review croisée" :** Chaque base créée par un membre est systématiquement revue et testée par un autre membre du groupe (insertion/suppression de données).
+* **Interface logicielle :** La tâche T18 permet d'encapsuler ces accès aux bases au sein du code de l'application, fournissant une API claire pour le futur moteur de jeu.
