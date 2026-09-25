@@ -16,7 +16,7 @@ L'objectif est de fournir un Compte rendu détaillé du travail fourni. Ce trava
 
 | ID | Tâche Macro | Complexité estimée | Durée estimée | Responsable (Affectation a priori) |
 | :--- | :--- | :--- | :--- | :--- |
-| T1 | Appropriation du jeu | Faible | 2h? | Tous les membres |
+| T1 | Appropriation du jeu | Faible | 3h | Tous les membres |
 | T2 | Note en Gdoc du travail fourni | Elever | Toute la semaine (travail étaler) | Hans Vinçon |
 | T3 | Configuration de l'environnement Git et squelette projet | Basse | 1h | Ulysse Virlogeux--Chabaille |
 | T4 | Brainstorming de l'Analyse Conceptuel (AC) | Haute | 3h | Tous les membres |
