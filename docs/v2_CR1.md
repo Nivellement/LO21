@@ -51,7 +51,7 @@ L'analyse conceptuelle permet d'identifier les principaux concepts nécessaires 
 
 ### Partie
 
-La **Partie** représente une partie complète de Codex Naturalis. Elle constitue le point central du modèle et regroupe les joueurs, les objectifs et les cartes utilisées pendant la partie.
+La **Partie** représente une partie complète de Codex Naturalis. Elle constitue le point central du modèle et regroupe les joueurs, les objectifs et les cartes utilisées pendant la partie. Une **Partie** propose deux modes de jeu : un mode solo et multijoueur.
 
 ```text
 PARTIE
@@ -151,35 +151,86 @@ Le **Score** représente les points accumulés par un joueur au cours de la part
 SCORE
  └── NOMBRE DE POINTS
 ```
+### Partie Solo
+
+Une partie solo propose une IA du nom de Tybor Kwelein en opposition.
+
+```text
+PARTIE SOLO
+      |
+      └── TYBOR KWELEIN
+```
+
+### Tybor Kwelein 
+
+Tybor a 2 niveaux de difficultés : un mode facile et difficile. Il présente les mêmes attributs qu'un joueur sauf qu'il n'a pas de carte objectif secret et pas de carte de départ. 
+
+```text
+TYBOR KWELEIN
+           ├── MODE FACILE
+           |    
+           ├── MODE DIFFICILE
+           ├── MAIN
+           |    └──CARTES  
+           |    ├── CARTE RESSOURCE
+           |    └── CARTE DORURE
+           |
+           ├── AIRE DE JEU
+           |    └── CARTES
+           |
+           └── SCORE 
+```
 
 ### Vue d'ensemble
 
 Les concepts identifiés peuvent finalement être regroupés de la manière suivante :
 *Notons que ce ne sont que des prémisses de liaison. nous ferons un véritable UML la semaine suivante.*
 ```text
+
 PARTIE
- │
- ├── JOUEURS
- │    ├── MAIN
- │    │    └── CARTES
- │    │
- │    ├── AIRE DE JEU
- │    │    └── CARTES
- │    │         ├── COINS
- │    │         ├── RESSOURCES
- │    │         └── OBJETS
- │    │
- │    ├── OBJECTIF SECRET
- │    └── SCORE
- │
- ├── OBJECTIFS
- │    ├── CONDITION
- │    └── VALEUR EN POINTS
- │
- └── CARTES
-      ├── CARTE DE DÉPART
-      ├── CARTE RESSOURCE
-      └── CARTE DORURE
+ |
+ |
+ | 
+ ├── PARTIE MULTI
+ |    │
+ |    ├── JOUEURS
+ |    │    ├── MAIN
+ |    │    │    └── CARTES
+ |    │    │
+ |    │    ├── AIRE DE JEU
+ |    │    │    └── CARTES
+ |    │    │         ├── COINS
+ |    │    │         ├── RESSOURCES
+ |    │    │         └── OBJETS
+ |    │    │
+ |    │    ├── OBJECTIF SECRET
+ |    │    └── SCORE
+ |    │
+ |    ├── OBJECTIFS
+ |    │    ├── CONDITION
+ |    │    └── VALEUR EN POINTS
+ |    │
+ |    └── CARTES
+ |         ├── CARTE DE DÉPART
+ |         ├── CARTE RESSOURCE
+ |         └── CARTE DORURE
+ |
+ └── PARTIE SOLO
+      |
+      └── TYBOR KWELEIN
+           ├── MODE FACILE
+           |    
+           ├── MODE DIFFICILE
+           ├── MAIN
+           |    └──CARTES  
+           |    ├── CARTE RESSOURCE
+           |    └── CARTE DORURE
+           |
+           ├── AIRE DE JEU
+           |    └── CARTES
+           |
+           └── SCORE 
+              
 ```
 
 ---
