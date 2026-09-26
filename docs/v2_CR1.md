@@ -12,18 +12,18 @@
 
 ## 1. Liste des tâches et durée pour atteindre l'objectif de la semaine 1
 
-L'objectif est de fournir un Compte rendu détaillé du travail fourni. Ce travail consistait à établir une analyse conceptuel complète pour débroussailler le terrain de l'UML (semaine 2).
+L'objectif est de fournir un Compte rendu détaillé du travail fourni. Ce travail consistait à établir une analyse conceptuelle complète pour débroussailler le terrain de l'UML (semaine 2).
 
 | ID | Tâche Macro | Complexité estimée | Durée estimée | Responsable (Affectation a priori) |
 | :--- | :--- | :--- | :--- | :--- |
 | T1 | Appropriation du jeu | Faible | 3h | Tous les membres |
 | T1bis | Partie réelle après le TD pour approfondir la compréhension des règles et des mécanismes du jeu | Faible | 1h~2h | Zeineb Mokded - Hans Vinçon - Victor Pottier |
-| T2 | Note en Gdoc du travail fourni | Elever | Toute la semaine (travail étaler) | Hans Vinçon |
+| T2 | Prise de notes dans le Gdoc sur le travail réalisé | Élevée | Travail réparti sur toute la semaine | Hans Vinçon |
 | T3 | Configuration de l'environnement Git et squelette projet | Basse | 1h | Ulysse Virlogeux--Chabaille |
-| T4 | Brainstorming de l'Analyse Conceptuel (AC) | Haute | 3h | Tous les membres |
+| T4 | Brainstorming de l'Analyse Conceptuelle (AC) | Haute | 3h | Tous les membres |
 | T5 | Mise sur papier des concepts du jeu/AC | Basse | durant le brainstorming | Hans Vinçon - Ulysse Virlogeux--Chabaille |
 | T5bis | Mise au propre du GDoc : clarification des règles, rédaction et clarification du mode solo de Tybor et création de l’arbre décisionnel | Moyenne | 2h30 | Zeineb Mokded |
-| T6 | Redaction propre du CR1 + Analyse conceptuel | Elever | 2~3h | Ulysse Virlogeux--Chabaille |
+| T6 | Rédaction propre du CR1 + Analyse conceptuelle | Élevée | 2~3h | Ulysse Virlogeux--Chabaille |
 | T7 | Review du CR | Basse | 30min | Hans Vinçon - Victor Pottier - Zeineb Mokded |
 
 ---
@@ -38,7 +38,7 @@ Afin de centraliser le travail et de faciliter son organisation, nous avons éga
 Cette organisation nous a ainsi permis de centraliser les informations importantes et de faciliter la collaboration tout au long du projet.
 
 **Implication des membres :**
-* **Ulysse Virlogeux--Chabaille** : Malgré une maladie durant la première semaine, il a principalement pris en charge l’organisation du groupe. Il a notamment mis en place le repository GitHub et le GitHub Project afin de structurer le travail et de faciliter la répartition des tâches. Il a également défini l’objectif et le cadre de l’analyse conceptuelle, permettant ainsi au groupe d’avoir une direction claire pour cette partie du projet, et a organisé le meeting de brainstomring sur l'analyse conceptuel. Mais il n'a pas fourni de travail concret sur la dite-analyse ni aider à la rédaction du Gdoc à cause de sa maladie.
+* **Ulysse Virlogeux--Chabaille** : Malgré une maladie durant la première semaine, il a principalement pris en charge l’organisation du groupe. Il a notamment mis en place le repository GitHub et le GitHub Project afin de structurer le travail et de faciliter la répartition des tâches. Il a également défini l’objectif et le cadre de l’analyse conceptuelle, permettant ainsi au groupe d’avoir une direction claire pour cette partie du projet, et a organisé le meeting de brainstomring sur l'analyse conceptuelle. Mais il n'a pas fourni de travail concret sur la dite-analyse ni aider à la rédaction du Gdoc à cause de sa maladie.
 * **Hans Vinçon** : Il a créé et tenu à jour le Google Docs général du groupe. Il y a consigné l’ensemble des informations récoltées et des éléments produits au cours du projet, faisant de ce document le principal support de référence pour le groupe. Les différents membres pouvaient ainsi s’y référer pour retrouver facilement les informations et suivre l’avancement du travail. Hans a également participé à l’analyse conceptuelle.
 * **Victor Pottier** : Il a participé à la rédaction et à la mise à jour du Google Docs en apportant les informations qu’il avait recueillies. Il a également travaillé sur l’analyse conceptuelle avec Hans Vinçon et les autres membres du groupe.
 * **Zeineb Mokded** : Elle a contribué à la rédaction et à la mise à jour du Google Docs en reprenant et restructurant les règles du jeu afin de les rendre plus claires et séquentielles. Elle a également explicité le fonctionnement du mode solo contre Tybor et réalisé l’arbre décisionnel associé. Elle a également contribué à l’élaboration de l’analyse conceptuelle avec les autres membres du groupe.
@@ -207,7 +207,7 @@ Afin de garantir l'intégrité référentielle, les bases indépendantes (sans F
 | **T18** | **Développement des fonctions de contrôle BDD (Gestion globale)**<br>• Implémentation en C++ de fonction d'accès aux données (méthodes d'ajout, suppression, consultation programmatique sans passer par le terminal) | Indispensable | Haute | T11, T13, T15, T17 | 8 h ? | Victor Pottier, Ulysse Virlogeux--Chabaille |
 | **T19** | **Review et tests des fonctions de contrôle BDD**<br>• Validation du bon fonctionnement des méthodes C++ sur l'ensemble des BDD créées | Importante | Moyenne | T18 | 1 h | Zeineb Mokded, Hans Vinçon |
 | **T20** | **Rédaction et mise en forme du Compte Rendu 2**<br>• Création du rapport: diagrammes UML de classes et schéma BDD | Indispensable | Moyenne | T18, T19 | 4 h | Responsable CR2 (rotation) |
-| **T21** | **Réunion final**<br>• Relecture collective, mise à jour du GitHub Project + repas récompense pour le travail bien accompli en groupe + lecture de tout les membres du CR2| Basse | Basse | T20 | 1 h 30 | Tous les membres |
+| **T21** | **Réunion finale**<br>• Relecture collective, mise à jour du GitHub Project + repas récompense pour le travail bien accompli en groupe + lecture de tout les membres du CR2| Basse | Basse | T20 | 1 h 30 | Tous les membres |
 
 ### 4.2. Synthèse de la logique d'ordonnancement
 * **Gestion des dépendances PK / FK :** Les tables de référence (`Joueur`, `Carte`, `Objectif`) sont modélisées et testées de avant d'aborder la table de l'état du jeu (`Manuscrit/Partie`), évitant ainsi tout blocage lors de la définition des contraintes relationnelles.
