@@ -1,0 +1,267 @@
+# Compte Rendu 1 - Projet Codex Naturalis
+
+**Date de rendu :** Semaine du 21 septembre  
+**Auteur responsable du livrable :** Ulysse Virlogeux--Chabaille (GI01)  
+**Membres du groupe :**
+1. Ulysse Virlogeux--Chabaille
+2. Hans Vinçon
+3. Victor Pottier
+4. Zeineb Mokded
+
+---
+
+## 1. Liste des tâches et durée pour atteindre l'objectif de la semaine 1
+
+L'objectif est de fournir un compte-rendu détaillé du travail fourni. Ce travail consistait à établir une analyse conceptuelle complète pour débroussailler le terrain de l'UML (semaine 2).
+
+| ID | Tâche Macro | Complexité estimée | Durée estimée | Responsable (Affectation a priori) |
+| :--- | :--- | :--- | :--- | :--- |
+| T1 | Appropriation du jeu | Faible | 3 h | Tous les membres |
+| T1bis | Partie réelle le 16/09 pour approfondir la compréhension des règles et des mécanismes du jeu | Faible | 1 h | Zeineb Mokded - Hans Vinçon - Victor Pottier |
+| T2 | Note en Gdoc du travail fourni | Elevée | Toute la semaine (travail étalé) | Hans Vinçon |
+| T3 | Configuration de l'environnement Git et squelette projet | Faible | 1 h | Ulysse Virlogeux--Chabaille |
+| T4 | Brainstorming de l'analyse conceptuelle (AC) | Elevée | 3 h | Tous les membres |
+| T5 | Mise sur papier des concepts du jeu/AC | Faible | durant le brainstorming | Hans Vinçon - Ulysse Virlogeux--Chabaille |
+| T5bis | Mise au propre du GDoc : clarification des règles, rédaction et clarification du mode solo de Tybor et création de l’arbre décisionnel | Moyenne | 2 h 30 | Zeineb Mokded |
+| T5ter | Anticipation des difficultés à prévoir lors de l'implémentation et identification des règles potentiellement problématiques| Moyenne | 2h | Victor Pottier |
+| T6 | Rédaction propre du CR1 + analyse conceptuelle | Elevée | 2 à 3 h | Ulysse Virlogeux--Chabaille |
+| T7 | Relecture du CR | Faible | 30 min | Hans Vinçon - Victor Pottier - Zeineb Mokded |
+
+---
+
+## 2. Bilan sur la cohésion de groupe et l'implication
+
+**État de la cohésion :**  
+Le groupe s’est principalement organisé via Instagram pour les échanges et discussions quotidiennes, qui n’avaient pas vocation à être conservés ou relus par la suite.
+
+Afin de centraliser le travail et de faciliter son organisation, nous avons également mis en place un repository GitHub ainsi qu’un GitHub Project. Ces outils nous ont permis de répartir les tâches, de suivre leur avancement et de permettre à chacun de prendre en charge les missions qu’il souhaitait réaliser, tout en gardant une bonne visibilité sur le travail des autres membres.
+
+Cette organisation nous a ainsi permis de centraliser les informations importantes et facilitera la collaboration tout au long du projet.
+
+**Implication des membres :**
+* **Ulysse Virlogeux--Chabaille** : Malgré une maladie durant la première semaine, il a principalement pris en charge l’organisation du groupe. Il a notamment mis en place le repository GitHub et le GitHub Project afin de structurer le travail et de faciliter la répartition des tâches. Il a également défini l’objectif et le cadre de l’analyse conceptuelle, permettant ainsi au groupe d’avoir une direction claire pour cette partie du projet, et a organisé la réunion de brainstorming sur l'analyse conceptuelle. Mais il n'a pas fourni de travail concret sur la dite-analyse ni aider à la rédaction du Google Docs à cause de sa maladie.
+* **Hans Vinçon** : Il a créé et tenu à jour le Google Docs général du groupe. Il y a consigné l’ensemble des informations récoltées et des éléments produits au cours du projet, faisant de ce document le principal support de référence pour le groupe. Les différents membres pouvaient ainsi s’y référer pour retrouver facilement les informations et suivre l’avancement du travail. Hans a également participé à l’analyse conceptuelle.
+* **Victor Pottier** : Possédant un exemplaire physique du jeu, il a pu étudier plus en détail les mécanismes du jeu et identifier les éventuelles difficultés liées aux règles auxquelles le groupe devra prêter attention au cours du projet, en particulier concernant le mécanisme de pose des cartes. Une première réflexion sur la méthode de parcours des cartes posées (c'est-à-dire de l'aire de jeu d'un joueur) a aussi été menée. Ces détails importants ont ensuite été retranscrits sur le Google Doc. Un travail sur l’analyse conceptuelle avec les autres membres du groupe a également été fourni.
+* **Zeineb Mokded** : Elle a contribué à la rédaction et à la mise à jour du Google Docs en reprenant et restructurant les règles du jeu afin de les rendre plus claires et séquentielles. Elle a également explicité le fonctionnement du mode solo contre Tybor et réalisé l’arbre décisionnel associé. Elle a également contribué à l’élaboration de l’analyse conceptuelle avec les autres membres du groupe.
+
+---
+
+## 3. Analyse conceptuelle de Codex Naturalis
+
+L'analyse conceptuelle permet d'identifier les principaux concepts nécessaires pour représenter le fonctionnement de **Codex Naturalis**. Le jeu est principalement organisé autour d'une **Partie**, de plusieurs **Joueurs**, de leurs **Cartes** et de leurs **Objectifs**.
+
+### Partie
+
+La **Partie** représente une partie complète de *Codex Naturalis*. Elle constitue le point central du modèle et regroupe les joueurs, les objectifs et les cartes utilisées pendant la partie. Une **Partie** propose deux modes de jeu : un mode solo et multijoueur.
+
+```text
+PARTIE
+ ├── 2 à 4 JOUEURS
+ ├── OBJECTIFS
+ └── CARTES
+```
+
+### Joueur
+
+Le **Joueur** représente un participant à la partie. Il possède les éléments nécessaires pour effectuer ses actions et suivre sa progression : une main de cartes, une aire de jeu, un objectif secret et un score.
+
+```text
+JOUEUR
+ ├── 1 AIRE DE JEU
+ ├── 1 MAIN
+ ├── 1 OBJECTIF SECRET
+ └── 1 SCORE
+```
+
+### Aire de jeu
+
+L'**Aire de jeu** représente le Codex construit progressivement par un joueur. Elle contient les cartes posées par celui-ci et permet notamment de déterminer les ressources et objets actuellement disponibles.
+
+```text
+AIRE DE JEU
+ └── CARTES POSÉES
+```
+
+### Main
+
+La **Main** représente les cartes actuellement disponibles pour le joueur. Elle évolue au cours de la partie en fonction des cartes jouées et piochées.
+
+```text
+MAIN
+ └── CARTES
+```
+
+### Carte
+
+La **Carte** est le principal élément manipulé pendant la partie. Une carte possède plusieurs **coins** pouvant être recouverts lors du placement et peut comporter différents éléments utiles au joueur.
+
+Les cartes sont regroupées en plusieurs catégories :
+
+```text
+CARTE
+ ├── COINS
+ ├── RESSOURCES
+ └── OBJETS
+
+CARTE
+ ├── CARTE DE DÉPART
+ ├── CARTE RESSOURCE
+ └── CARTE DORURE
+```
+
+Les **Cartes Ressource** permettent notamment de fournir des ressources, tandis que les **Cartes Dorure** peuvent apporter des points et nécessiter certaines ressources pour être jouées. La carte de départ constitue le point initial de construction du Codex d'un joueur.
+
+### Ressource
+
+Les **Ressources** sont les éléments représentés sur les cartes et nécessaires à certaines actions, notamment au placement de certaines cartes Dorure. Leur disponibilité dépend des cartes visibles dans l'aire de jeu.
+
+```text
+RESSOURCE
+ ├── VÉGÉTAL
+ ├── ANIMAL
+ ├── FONGIQUE
+ └── INSECTE
+```
+
+### Objet
+
+Les **Objets** sont des éléments présents sur certaines cartes. Ils peuvent être pris en compte dans certaines conditions de score.
+
+```text
+OBJET
+ ├── PLUME
+ ├── ENCRIER
+ └── MANUSCRIT
+```
+
+### Objectif
+
+Un **Objectif** définit une condition permettant au joueur d'obtenir des points supplémentaires. Les objectifs peuvent être communs à l'ensemble des joueurs ou attribués individuellement sous la forme d'un objectif secret.
+
+```text
+OBJECTIF
+ ├── CONDITION
+ └── VALEUR EN POINTS
+```
+
+### Score
+
+Le **Score** représente les points accumulés par un joueur au cours de la partie. Il est notamment alimenté par les cartes jouées et les objectifs réalisés.
+
+```text
+SCORE
+ └── NOMBRE DE POINTS
+```
+### Partie Solo
+
+Une partie solo propose une IA du nom de Tybor Kwelein en opposition.
+
+```text
+PARTIE SOLO
+      |
+      └── TYBOR KWELEIN
+```
+
+### Tybor Kwelein 
+
+Tybor possède deux niveaux de difficulté : un mode facile et un mode difficile. Il présente les mêmes attributs qu'un joueur, sauf qu'il n'a pas de carte d'objectif secret ni de carte de départ. 
+
+```text
+TYBOR KWELEIN
+           ├── MODE FACILE
+           |    
+           ├── MODE DIFFICILE
+           ├── MAIN
+           |    └──CARTES  
+           |    ├── CARTE RESSOURCE
+           |    └── CARTE DORURE
+           |
+           ├── AIRE DE JEU
+           |    └── CARTES
+           |
+           └── SCORE 
+```
+
+### Vue d'ensemble
+
+Les concepts identifiés peuvent finalement être regroupés de la manière suivante :
+*Notons que ce ne sont que des prémisses de liaison. Nous ferons un véritable UML la semaine suivante.*
+```text
+
+PARTIE
+ |
+ |
+ | 
+ ├── PARTIE MULTI
+ |    │
+ |    ├── JOUEURS
+ |    │    ├── MAIN
+ |    │    │    └── CARTES
+ |    │    │
+ |    │    ├── AIRE DE JEU
+ |    │    │    └── CARTES
+ |    │    │         ├── COINS
+ |    │    │         ├── RESSOURCES
+ |    │    │         └── OBJETS
+ |    │    │
+ |    │    ├── OBJECTIF SECRET
+ |    │    └── SCORE
+ |    │
+ |    ├── OBJECTIFS
+ |    │    ├── CONDITION
+ |    │    └── VALEUR EN POINTS
+ |    │
+ |    └── CARTES
+ |         ├── CARTE DE DÉPART
+ |         ├── CARTE RESSOURCE
+ |         └── CARTE DORURE
+ |
+ └── PARTIE SOLO
+      |
+      └── TYBOR KWELEIN
+           ├── MODE FACILE
+           |    
+           ├── MODE DIFFICILE
+           ├── MAIN
+           |    └──CARTES  
+           |    ├── CARTE RESSOURCE
+           |    └── CARTE DORURE
+           |
+           ├── AIRE DE JEU
+           |    └── CARTES
+           |
+           └── SCORE 
+              
+```
+
+---
+
+## 4. Planification et objectifs pour le Compte Rendu 2 (Semaine du 3 novembre)
+
+Pour le second livrable, l'objectif est d'aboutir à un début d'architecture concrète et d'implémentation. Notre stratégie repose sur la mise en place préalable de la persistance des données du jeu (gestion de bases de données / tables relationnelles avec clés primaires (PK) et clés étrangères (FK)), indispensable avant d'attaquer la logique métier complète.
+
+Afin de garantir l'intégrité référentielle, les bases indépendantes (sans FK) sont conçues et vérifiées avant les bases dépendantes (qui contiennent des FK pointant vers les premières).
+
+### 4.1. Tableau prévisionnel des tâches jusqu'au CR2
+
+| ID | Tâche / sous-tâche | Priorité | Complexité | Dépendances | Durée estimée | Responsable (Affectation a priori) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **T8** | **Brainstorming UML & Schéma relationnel BDD**<br>• Identification des tables, attributs, PK et FK<br>• Établissement des liaisons entité-association | Indispensable | Élevée | T4 | 4 h | Tous les membres |
+| **T9** | **Phase de maturation & Rédaction propre de l'UML**<br>• Sessions de jeu complémentaires pour réfléchir et se laisser le temps de valider notre UML<br>• Ajustement et validation collégiale du modèle conceptuel si personne n'a rien à ajouter + Création du fichier UML | Moyenne | Faible | T8 | 2 jours | Tous les membres + Ulysse Virlogeux--Chabaille (pour la rédaction) |
+| **T10** | **Création BDD Joueurs**<br>• Schéma de la table Joueur (PK `id_joueur`, pseudo, couleur de pion, etc.) | Indispensable | Moyenne | T9 | 2 h | Hans Vinçon |
+| **T11** | **Relecture BDD Joueurs**<br>• Tests d'insertion, mise à jour et suppression de profils (directement en terminal) pour valider le travail | Indispensable | Faible | T10 | 1 h | Victor Pottier |
+| **T12** | **Création BDD Cartes (Référentiel)**<br>• Schéma (PK `id_carte`, type, coins recto/verso, ressources fournies, coût de pose, points) | Indispensable | Élevée | T9 | 4 h | Victor Pottier |
+| **T13** | **Relecture BDD Cartes**<br>• Insertion d'un échantillon représentatif de cartes de chaque règne pour valider (directement en terminal) | Indispensable | Faible | T12 | 2 h | Zeineb Mokded |
+| **T14** | **Création BDD Objectifs (Référentiel)**<br>• Schéma (PK `id_objectif`, type de condition [motif/collection], points accordés) | Indispensable | Élevée | T9 | 3 h | Zeineb Mokded |
+| **T15** | **Relecture BDD Objectifs**<br>• Tests d'insertion et validation des types de critères d'objectifs (directement en terminal) | Indispensable | Faible | T14 | 1 h 30 | Hans Vinçon |
+| **T16** | **Création BDD État de Partie & Manuscrit**<br>• Schéma dépendant (PK `id_action`, FK `id_partie`, FK `id_joueur`, FK `id_carte`, position `(x, y, z)`, face visible) | Indispensable | Élevée | T10, T12, T14 | 5 h | Ulysse Virlogeux--Chabaille |
+| **T17** | **Relecture BDD État de Partie & Manuscrit**<br>• Vérification des contraintes d'intégrité référentielle (rejet si FK invalide) et tests d'ajout  | Indispensable | Faible | T16 | 2 h | Hans Vinçon |
+| **T18** | **Développement des fonctions de contrôle BDD (Gestion globale)**<br>• Implémentation en C++ de fonctions d'accès aux données (méthodes d'ajout, suppression, consultation programmatique sans passer par le terminal) | Indispensable | Élevée | T11, T13, T15, T17 | 8 h (estimation à confirmer) | Victor Pottier, Ulysse Virlogeux--Chabaille |
+| **T19** | **Relecture et tests des fonctions de contrôle BDD**<br>• Validation du bon fonctionnement des méthodes C++ sur l'ensemble des BDD créées | Importante | Moyenne | T18 | 1 h | Zeineb Mokded, Hans Vinçon |
+| **T20** | **Rédaction et mise en forme du Compte Rendu 2**<br>• Création du rapport: diagrammes UML de classes et schéma BDD | Indispensable | Moyenne | T18, T19 | 4 h | Responsable CR2 (rotation) |
+| **T21** | **Réunion finale**<br>• Relecture collective, mise à jour du GitHub Project + repas de récompense pour le travail bien accompli par le groupe + lecture du CR2 par tous les membres| Faible | Basse | T20 | 1 h 30 | Tous les membres |
+
+### 4.2. Synthèse de la logique d'ordonnancement
+* **Gestion des dépendances PK / FK :** Les tables de référence (`Joueur`, `Carte`, `Objectif`) sont modélisées et testées avant d'aborder la table de l'état du jeu (`Manuscrit/Partie`), évitant ainsi tout blocage lors de la définition des contraintes relationnelles.
+* **Assurance qualité par "Relecture croisée" :** Chaque base créée par un membre est systématiquement revue et testée par un autre membre du groupe (insertion/suppression de données).
+* **Interface logicielle :** La tâche T18 permet d'encapsuler ces accès aux bases au sein du code de l'application, fournissant une API claire pour le futur moteur de jeu.
