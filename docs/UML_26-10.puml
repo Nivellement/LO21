@@ -1,0 +1,258 @@
+@startuml CodexNaturalis
+
+' ===== Cartes =====
+package Cartes {
+
+class Ressource << Stereotype >> {
+    - nom : string
+}
+
+class Objet << Stereotype >> {
+    - nom : string
+}
+
+class Coin {
+    - ressource : Ressource*
+    - objet : Objet*
+}
+note right of Coin
+Un coin peut être vide.
+Il contient au plus une ressource ou un objet.
+end note
+
+abstract class Carte {
+    - id : int
+}
+
+abstract class CarteDePlacement {
+    - couleur : string
+    - basG : Coin
+    - basD : Coin
+    - hautG : Coin
+    - hautD : Coin
+    - milieu : Ressource*
+}
+note left of CarteDePlacement
+Les coins et le milieu peuvent être vides.
+end note
+
+class CarteRessource {
+}
+
+abstract class ConditionScore {
+    + calculer(p : const Plateau&) const : size_t
+}
+
+class CarteDorure {
+    - coutPose : vector<Ressource>
+    - points : int
+    - conditionScore : ConditionScore*
+}
+
+class CarteObjectif {
+    - conditionScore : ConditionScore*
+    - points : int
+    - type : TypeObjectif
+}
+
+enum TypeObjectif {
+    SECRET
+    COMMUN
+}
+
+class CarteDepart {
+}
+
+Carte <|-- CarteDePlacement
+CarteDePlacement <|-- CarteRessource
+CarteDePlacement <|-- CarteDorure
+Carte <|-- CarteObjectif
+CarteDePlacement <|-- CarteDepart
+
+CarteDePlacement *-- "4" Coin
+Coin --> "0..1" Ressource
+Coin --> "0..1" Objet
+CarteDorure --> "0..1" ConditionScore
+CarteObjectif --> "1" ConditionScore
+
+}
+
+' ===== Joueur =====
+package Joueur {
+
+class Position {
+    - x : int
+    - y : int
+}
+
+class CartePlacee {
+    - carte : const CarteDePlacement*
+    - position : Position
+    - recto : bool
+}
+
+class Joueur {
+    - nom : string
+    - score : size_t
+    - main : vector<const CarteDePlacement*>
+    - objectifSecret : const CarteObjectif*
+    - plateau : Plateau
+
+    + jouerCarte(carte : const CarteDePlacement&, pos : const Position&, recto : bool)
+    + calculerScore() : size_t
+    + getScore() const : size_t
+    + getNom() const : const string&
+    + getCarte(i : size_t) const : const CarteDePlacement&
+    + getCarteObjectif() const : const CarteObjectif&
+    + getPlateau() const : const Plateau&
+}
+
+class Plateau {
+    - cartes : vector<CartePlacee>
+
+    + Plateau()
+    + peutAjouter(c : const CarteDePlacement&, pos : const Position&, recto : bool) const : bool
+    + ajouter(c : const CarteDePlacement&, pos : const Position&, recto : bool)
+    + print(f : ostream&) const : void
+}
+
+Joueur *-- "1" Plateau
+Joueur "1" o-- "0..3" CarteDePlacement : main
+Joueur --> "1" CarteObjectif : objectif secret
+Plateau *-- "0..*" CartePlacee
+CartePlacee --> "1" CarteDePlacement
+
+}
+
+class Jeu {
+    - cartesRessource[40] : const CarteRessource*
+    - cartesDorure[40] : const CarteDorure*
+    - cartesDepart[6] : const CarteDepart*
+    - cartesObjectif[16] : const CarteObjectif*
+
+    + Jeu()
+    + getNbCartesRessources() const : size_t
+    + getNbCartesDorure() const : size_t
+    + getNbCartesDepart() const : size_t
+    + getNbCartesObjectif() const : size_t
+    + getCarteRessource(i : size_t) const : const CarteRessource&
+    + getCarteDorure(i : size_t) const : const CarteDorure&
+    + getCarteDepart(i : size_t) const : const CarteDepart&
+    + getCarteObjectif(i : size_t) const : const CarteObjectif&
+}
+
+Jeu "1" o-- "40" CarteRessource : gère
+Jeu "1" o-- "40" CarteDorure : gère
+Jeu "1" o-- "6" CarteDepart : gère
+Jeu "1" o-- "16" CarteObjectif : gère
+
+' ===== Pioches =====
+package Pioches {
+
+abstract class Pioche {
+    # nb : size_t
+
+    + getNbCartes() const : size_t
+    + estVide() const : bool
+}
+
+class PiocheRessource {
+    - cartesRessource : const CarteRessource**
+
+    + PiocheRessource(j : const Jeu&)
+    + piocher() : const CarteRessource&
+}
+
+class PiocheDorure {
+    - cartesDorure : const CarteDorure**
+
+    + PiocheDorure(j : const Jeu&)
+    + piocher() : const CarteDorure&
+}
+
+class PiocheObjectif {
+    - cartesObjectif : const CarteObjectif**
+
+    + PiocheObjectif(j : const Jeu&)
+    + piocher() : const CarteObjectif&
+}
+
+class PiocheDepart {
+    - cartesDepart : const CarteDepart**
+
+    + PiocheDepart(j : const Jeu&)
+    + piocher() : const CarteDepart&
+}
+
+Pioche <|-- PiocheRessource
+Pioche <|-- PiocheDepart
+Pioche <|-- PiocheObjectif
+Pioche <|-- PiocheDorure
+
+PiocheRessource "1" o-- "0..40" CarteRessource
+PiocheDorure "1" o-- "0..40" CarteDorure
+PiocheDepart "1" o-- "0..6" CarteDepart
+PiocheObjectif "1" o-- "0..16" CarteObjectif
+
+}
+
+' ===== Manager =====
+package Manager {
+
+abstract class IA {
+    + jouerTour() : void
+}
+
+class Tybor {
+    - ressources : vector<Ressource>
+    - score : size_t
+
+    + jouerTour() : void
+}
+
+IA <|-- Tybor
+
+abstract class Manager {
+    - joueurs : vector<Joueur*>
+    - jeu : Jeu
+    - piocheRessource : PiocheRessource*
+    - piocheObjectif : PiocheObjectif*
+    - piocheDorure : PiocheDorure*
+    - piocheDepart : PiocheDepart*
+
+    - cartesRessourceVisibles : vector<const CarteRessource*>
+    - cartesDorureVisibles : vector<const CarteDorure*>
+    - objectifsCommuns : vector<const CarteObjectif*>
+    - joueurCourant : size_t
+
+    + distribuer() : void
+    + jouerTour() : void
+    + verifierFinPartie() const : bool
+}
+
+class ManagerMulti {
+}
+
+class ManagerSolo {
+    - ia : IA*
+}
+
+Manager <|-- ManagerSolo
+Manager <|-- ManagerMulti
+
+Manager *-- "1" Jeu
+Manager *-- "1" PiocheRessource
+Manager *-- "1" PiocheDepart
+Manager *-- "1" PiocheObjectif
+Manager *-- "1" PiocheDorure
+Manager *-- "1..4" Joueur
+
+Manager --> "2" CarteRessource : visibles
+Manager --> "2" CarteDorure : visibles
+Manager --> "2" CarteObjectif : objectifs communs
+
+ManagerSolo --> "1" IA
+
+}
+
+@enduml
