@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1793205664 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/main.cpp
+	<iostream>
+
+1793206269 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/manager.cpp
+
+1793206400 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/pioche.cpp
+
+1793206017 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/player.cpp
+
+1793206522 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/tybor.cpp
+
