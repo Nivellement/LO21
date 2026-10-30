@@ -32,8 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="carte.cpp" />
-		<Unit filename="carte.h" />
+		<Unit filename="carte/Carte.cpp" />
+		<Unit filename="carte/Carte.h" />
+		<Unit filename="carte/Coin.cpp" />
+		<Unit filename="carte/Coin.h" />
+		<Unit filename="carte/Objet.cpp" />
+		<Unit filename="carte/Objet.h" />
+		<Unit filename="carte/Ressource.cpp" />
+		<Unit filename="carte/Ressource.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="manager.cpp" />
 		<Unit filename="manager.h" />

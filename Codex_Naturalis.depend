@@ -1,12 +1,42 @@
 # depslib dependency file v1.0
-1793205664 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/main.cpp
+1793357617 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/main.cpp
 	<iostream>
+	"carte/Carte.h"
 
-1793206269 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/manager.cpp
+1793355972 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/manager.cpp
 
-1793206400 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/pioche.cpp
+1793355972 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/pioche.cpp
 
-1793206017 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/player.cpp
+1793355972 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/player.cpp
 
-1793206522 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/tybor.cpp
+1793355972 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/tybor.cpp
+
+1793359310 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/carte/Coin.cpp
+	"Coin.h"
+
+1793355972 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/carte/Objet.cpp
+
+1793355972 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/carte/Ressource.cpp
+
+1793368963 source:/home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/carte/Carte.cpp
+	"Carte.h"
+
+1793370114 /home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/carte/Carte.h
+	<vector>
+	<string>
+	<iostream>
+	"Coin.h"
+
+1793366231 /home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/carte/Coin.h
+	<iostream>
+	"Ressource.h"
+	"Objet.h"
+
+1793355972 /home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/carte/Ressource.h
+	<iostream>
+	<string>
+
+1793355972 /home/hans/Documents/UTC/UTC/UV/LO21/Projet/Codex_Naturalis/carte/Objet.h
+	<iostream>
+	<string>
 
