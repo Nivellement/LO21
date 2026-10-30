@@ -25,11 +25,11 @@ namespace Codex {
 
     public:
         // Coin vide
-        Coin();
+        Coin() : ressource(nullptr), objet(nullptr) {}
 
         // Coin un constructeur pour chaque possibilité de coin faisable. Le bon sera appeler automatiquement.
-        explicit Coin(const Ressource& r);
-        explicit Coin(const Objet& o);
+        explicit Coin(const Ressource& r) : ressource(&r), objet(nullptr) {}
+        explicit Coin(const Objet& o) : ressource(nullptr), objet(&o) {}
 
         // Truc qui sera sûrement utile
         bool estVide() const;
@@ -37,8 +37,8 @@ namespace Codex {
         bool aObjet() const;
 
         // Accesseurs **en lecture uniquement**: renvoient nullptr si le coin ne contient pas ce type d'élément
-        const Ressource* getRessource() const;
-        const Objet* getObjet() const;
+        const Ressource* getRessource() const {return ressource;}
+        const Objet* getObjet() const {return objet;};
     };
 
     std::ostream& operator<<(std::ostream& f, const Coin& c);
