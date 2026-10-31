@@ -103,16 +103,7 @@ ostream& operator<<(ostream& f, const CartePlacement& cp);
 
     };
 
-    class CarteObjectif : public CartePlacement {
-        string conditionScore; //Pour le moment je met un string mais il faudra creer une class ConditionScore
-        string typeObjectif;
-        unsigned int point;
-        public :
-            CarteObjectif(int i, const string& c, const Coin& vhg, const Coin& vhd, const Coin& vbg, const Coin& vbd
-        , const Coin& rhg, const Coin& rhd, const Coin& rbg, const Coin& rbd, const Coin& vm, const Coin& rm, const string& CS, const string& TY, const unsigned int p) : CartePlacement(i, c, vhg, vhd, vbg, vbd, rhg, rhd, rbg, rbd, vm, rm),
-        conditionScore(CS), typeObjectif(TY), point(p) {}
-
-    };
+ 
 
 }
 
