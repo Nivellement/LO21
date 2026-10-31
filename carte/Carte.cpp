@@ -1,5 +1,7 @@
 #include "Carte.h"
-
+namespace Codex {
+    Carte::~Carte() = default;
+}
 using namespace Codex;
 
 
