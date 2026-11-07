@@ -46,7 +46,7 @@ L'architecture du projet étant établie, un travail de programmation considéra
 **!!!!ICI remplissez vous-même la partie qui vous concerne, j'ai écrit vite fait quelques idées rapides mais vous être libres et responsables de modifier et ré-écrire proprement tout ce qui vous concerne!!!!!**
 
 * **Ulysse Virlogeux--Chabaille** : Annonce des tâches à réaliser à travers Discord et organisation du projet. L'implication dans la programmation n'as pas non plus été négligé puisqu'il est celui qui s'est chargé de la création du .h de carte et de la plus part de ses dépendances.
-* **Hans Vinçon** : Développement de l'UML et bonne implication dans le projet pendant les vacances. 
+* **Hans Vinçon** : Développement de l'UML. Déclaration et définition des classes filles de la classe Carte. 
 * **Victor Pottier** : Rédaction du compte-rendu. Ne disposant pas de Visual Studio ni de CodeBlocks sur son ordinateur personnel, des installations seront à prévoir rapidement en anticipation du fort travail de programmation qui devra être réalisé. Peu de travail de conception fourni pendant les vacances mais un plus grand effort sera fourni pendant la 3e phase du projet.
 * **Zeineb Mokded** : Travail sur l'UML et les déclaration de classes. Un travail à distanciel est à noter.
 
