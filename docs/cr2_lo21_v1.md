@@ -4,7 +4,7 @@
 # Compte Rendu 2 - Projet Codex Naturalis
 
 **Date de rendu :** Semaine du 3 novembre  
-**Auteur responsable du livrable :** Victor Pottier
+**Auteur responsable du livrable :** Victor Pottier<br>
 **Membres du groupe :**
 1. Ulysse Virlogeux--Chabaille
 2. Hans Vinçon
@@ -33,7 +33,7 @@ L'objectif principal est de définir une architecture théorique suffisamment co
 
 **État de la cohésion :**
 
-Pour des questions d'organisation, le groupe a mis en place un serveur discord, afin de retrouver au mieux l'information relative aux tâches à effectuer (système d'annonce par ticket), à l'information à inclure dans le compte-renudu, etc....;
+Pour des questions d'organisation, le groupe a mis en place un serveur discord, afin de retrouver au mieux l'information relative aux tâches à effectuer (système d'annonce par ticket), à l'information à inclure dans le compte-rendu, etc....;
 
 L'affectation des tâches s'est réalisée à travers Github comme prévu dans le premier compte-rendu.
 
@@ -63,7 +63,7 @@ En effet, l'UML associé à cette architecture a été davantage détaillé lors
 
 Grâce à cet UML, nous avons ensuite pu débuter la programmation du projet, en implémentant concrètement l'architecture théorique, c'est-à-dire en définissant le "squelette" des classes décrites dans l'UML. Plus particulièrement, nous avons déclaré et défini plusieurs classes fondamentales telles que Carte, Player, Manager, Pioche, etc.
 
-Par rapport à la précédente, une meilleure organisation et une meilleure communication a également été mise en place grâce à une séparation concrète des différents thèmes de discussion, ainsi qu'un système d'annonce des tâches à réaliser de manière imminente (système de tickets). Nous avons également approfondi l'utilisation de l'environnement Github afin de maintenir une bonne vision sur l'historique du projet, son avancement, les tâches réalisées au cours du temps, la répartition des tâches, etc.
+Par rapport à la précédente phase, une meilleure organisation et une meilleure communication ont également été mises en place grâce à une séparation concrète des différents thèmes de discussion, ainsi qu'un système d'annonce des tâches à réaliser de manière imminente (système de tickets). Nous avons également approfondi l'utilisation de l'environnement Github afin de maintenir une bonne vision sur l'historique du projet, son avancement, les tâches réalisées au cours du temps, la répartition des tâches, etc.
 
 **!!!Ici, éventuellement inclure des captures d'écran du Github, du Discord, etc. Je ne sais pas le faire en Markdown et je n'ai pas trop d'idées de ce qu'on souhaite voir apparaître!!!**
 
@@ -87,8 +87,8 @@ On retrouvera ci-dessous un descriptif détaillé des tâches à anticiper au co
 | **T2** | **Fonctionnalités de la classe Plateau***<br>• La méthode peutAjouter vérifiant la permission de placement d'une carte nécessite une attention particulière, l'affichage avec print() est également à considérer | Indispensable | Haute | T1 | 5~6h | Victor Pottier |
 | **T3** | **Fonctionnalités de la classe Joueur**<br>• Fonctionnalité de calcul du score particulièrement complexe | Indispensable | Haute | T2 | 5~6h | Ulysse Virlogeux--Chabaille |
 | **T4** | **Instanciation de toutes les cartes du jeu**<br>• Toutes les cartes du jeu original doivent être instanciées, ce sera un procédé répétitif mais nécessaire pour la définition du constructeur Jeu(). A noter que ces cartes seront sûrement stockées dans une base de données par la suite. | Moyenne | Basse | T1 | 1~2h | Victor Pottier |
-| **T5** | **Fonctionnalités de la classe Jeu***<br>• Une attention particulière sera portée sur la définition du constructeur Jeu(). | Indispensable | Moyenne | T4 | 2~3h | Tous les membres |
-| **T6** | **Fonctionnalités des différentes pioches***<br>• Accès aux cartes instanciées dans Jeu via passage par paramètre, prise en compte de la dimension aléatoire pour la méthode piocher() | Haute | Moyenne | T5 | 1h | Zeineb Mokded |
+| **T5** | **Fonctionnalités de la classe Jeu**<br>• Une attention particulière sera portée sur la définition du constructeur Jeu(). | Indispensable | Moyenne | T4 | 2~3h | Tous les membres |
+| **T6** | **Fonctionnalités des différentes pioches**<br>• Accès aux cartes instanciées dans Jeu via passage par paramètre, prise en compte de la dimension aléatoire pour la méthode piocher() | Haute | Moyenne | T5 | 1h | Zeineb Mokded |
 | **T7** | **Fonctionnalités de la classe Manager**<br>• La méthode jouerTour() nécessitera une attention particulière | Haute | Haute | T6, T3 | 5~6h | Hans Vinçon |
 | **T8** | **Tests des différentes fonctionnalités**<br>• Validation du bon fonctionnement des méthodes C++ implémentées, une réunion sera organisée à l'issue de ces tests | Moyenne | Moyenne | T7 | 1h / membre | Tous les membres |
 | **T9** | **Implémentation du mode de Jeu contre l'ordinateur Tybor**<br>• Commencer l'implémentation des stratégies de Tybor et de la sous-classes ManagerSolo | Moyenne | Haute | T7 | 6~7h | Zeineb Mokded + autres membres |
