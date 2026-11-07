@@ -1,7 +1,7 @@
 
 **!!!TODO : inclure screens Github, discord, UML, etc, tout ce puisse paraître pertinent. Ce CR est uniquement une première version, sa vocation est d'être modifié.!!!!**
 
-# Compte Rendu 1 - Projet Codex Naturalis
+# Compte Rendu 2 - Projet Codex Naturalis
 
 **Date de rendu :** Semaine du 3 novembre  
 **Auteur responsable du livrable :** Victor Pottier
@@ -31,7 +31,8 @@ L'objectif principal est de définir une architecture théorique suffisamment co
 
 ## 2. Bilan sur la cohésion de groupe et l'implication
 
-**État de la cohésion :**  
+**État de la cohésion :**
+
 Pour des questions d'organisation, le groupe a mis en place un serveur discord, afin de retrouver au mieux l'information relative aux tâches à effectuer (système d'annonce par ticket), à l'information à inclure dans le compte-renudu, etc....;
 
 L'affectation des tâches s'est réalisée à travers Github comme prévu dans le premier compte-rendu.
@@ -43,6 +44,7 @@ L'architecture du projet étant établie, un travail de programmation considéra
 **Implication des membres :**
 
 **!!!!ICI remplissez vous-même la partie qui vous concerne, j'ai écrit vite fait quelques idées rapides mais vous être libres et responsables de modifier et ré-écrire proprement tout ce qui vous concerne!!!!!**
+
 * **Ulysse Virlogeux--Chabaille** : Annonce des tâches à réaliser à travers Discord et organisation du projet. Une meilleur présence est à noter suite à la fin de la maladie.
 * **Hans Vinçon** : Développement de l'UML et bonne implication dans le projet pendant les vacances. 
 * **Victor Pottier** : Rédaction du compte-rendu. Ne disposant pas de Visual Studio ni de CodeBlocks sur son ordinateur personnel, des installations seront à prévoir rapidement en anticipation du fort travail de programmation qui devra être réalisé. Peu de travail de conception fourni pendant les vacances mais un plus grand effort sera fourni pendant la 3e phase du projet.
@@ -57,25 +59,28 @@ Bilan : très bonne entente du groupe, la prise de décision peut toutefois êtr
 
 Le point le plus important concerne la définition plus poussée de l'architecture théorique du projet.
 
-En effet, l'UML associé à cette architecture a été et davantage détaillé lors de cette 2e phase du projet. Notamment, les associations et les héritages entre les classes du projet ont été proprement explicités.
+En effet, l'UML associé à cette architecture a été davantage détaillé lors de cette 2e phase du projet. Notamment, les associations et les héritages entre les classes du projet ont été proprement explicités. 
 
-Nous avons ensuite débuté la programmation du projet, en implémentant concrètement l'architecture théorique  en définissant le "squelette" des classes décrites dans l'UML.
+Grâce à cet UML, nous avons ensuite pu débuter la programmation du projet, en implémentant concrètement l'architecture théorique, c'est-à-dire en définissant le "squelette" des classes décrites dans l'UML. Plus particulièrement, nous avons déclaré et défini plusieurs classes fondamentales telles que Carte, Player, Manager, Pioche, etc.
 
+Par rapport à la précédente, une meilleure organisation et une meilleure communication a également été mise en place grâce à une séparation concrète des différents thèmes de discussion, ainsi qu'un système d'annonce des tâches à réaliser de manière imminente (système de tickets). Nous avons également approfondi l'utilisation de l'environnement Github afin de maintenir une bonne vision sur l'historique du projet, son avancement, les tâches réalisées au cours du temps, la répartition des tâches, etc.
 
+**!!!Ici, éventuellement inclure des captures d'écran du Github, du Discord, etc. Je ne sais pas le faire en Markdown et je n'ai pas trop d'idées de ce qu'on souhaite voir apparaître!!!**
 
 ---
 
 ## 4. Planification et objectifs pour le Compte Rendu 3 (Semaine du 30 novembre)
 
-Pour le troisième livrable, l'objectif serait de pouvoir conclure une première version jouable sur terminal du projet. Nous nous concentrerons donc sur la programmation des fonctionnalités essentielles au bon déroulement d'une partie de Codex Naturalis.
+Pour le troisième livrable, l'objectif serait de pouvoir conclure une première version jouable sur terminal du projet. Nous nous concentrerons donc sur la programmation des fonctionnalités essentielles au bon déroulement d'une partie de Codex Naturalis. Ainsi, nous n'accorderons que peu d'importance à l'interface graphique et à la connexion avec une base de données pendant cette prochaine phase.
 
 Une architecture détaillée ayant été dévéloppée au cours de la phase 2, la programmation des classes et de leurs fonctionnalités au cours de la prochaine phase sera nettement facilitée.
 
-### 4.1. Tableau prévisionnel des tâches jusqu'au CR2
+On retrouvera ci-dessous un descriptif détaillé des tâches à anticiper au cours de la prochaine phase.
 
-
+#### Tableau prévisionnel des tâches jusqu'au CR3
 
 **A NOTER : les affectations sont pour l'instant arbitraires, chacun peut modifier ses tâches selon sa volonté. En particulier, certaines tâches affectées à "Tous les membres" peuvent avoir un responsable désigné.**
+
 | ID | Tâche / Sous-tâche | Priorité | Complexité | Dépendances | Durée estimée | Responsable (Affectation a priori) |
 | **T1** | **Programmation du squelette de toutes les classes restantes (fichiers .h)**<br>•Besoin de définir classes Position, CartePlacee, CarteDorure, PiocheDorure, etc. | Indispensable | Moyenne | Aucune | 2h | Tous les membres |
 | **T2** | **Fonctionnalités de la classe Plateau***<br>• La méthode peutAjouter vérifiant la permission de placement d'une carte nécessite une attention particulière, l'affichage avec print() est également à considérer | Indispensable | Haute | T1 | 5~6h | Victor Pottier |
