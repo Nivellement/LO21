@@ -82,6 +82,7 @@ On retrouvera ci-dessous un descriptif détaillé des tâches à anticiper au co
 **A NOTER : les affectations sont pour l'instant arbitraires, chacun peut modifier ses tâches selon sa volonté. En particulier, certaines tâches affectées à "Tous les membres" peuvent avoir un responsable désigné.**
 
 | ID | Tâche / Sous-tâche | Priorité | Complexité | Dépendances | Durée estimée | Responsable (Affectation a priori) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **T1** | **Programmation du squelette de toutes les classes restantes (fichiers .h)**<br>•Besoin de définir classes Position, CartePlacee, CarteDorure, PiocheDorure, etc. | Indispensable | Moyenne | Aucune | 2h | Tous les membres |
 | **T2** | **Fonctionnalités de la classe Plateau***<br>• La méthode peutAjouter vérifiant la permission de placement d'une carte nécessite une attention particulière, l'affichage avec print() est également à considérer | Indispensable | Haute | T1 | 5~6h | Victor Pottier |
 | **T3** | **Fonctionnalités de la classe Joueur**<br>• Fonctionnalité de calcul du score particulièrement complexe | Indispensable | Haute | T2 | 5~6h | Ulysse Virlogeux--Chabaille |
@@ -91,5 +92,5 @@ On retrouvera ci-dessous un descriptif détaillé des tâches à anticiper au co
 | **T7** | **Fonctionnalités de la classe Manager**<br>• La méthode jouerTour() nécessitera une attention particulière | Haute | Haute | T6, T3 | 5~6h | Hans Vinçon |
 | **T8** | **Tests des différentes fonctionnalités**<br>• Validation du bon fonctionnement des méthodes C++ implémentées, une réunion sera organisée à l'issue de ces tests | Moyenne | Moyenne | T7 | 1h / membre | Tous les membres |
 | **T9** | **Implémentation du mode de Jeu contre l'ordinateur Tybor**<br>• Commencer l'implémentation des stratégies de Tybor et de la sous-classes ManagerSolo | Moyenne | Haute | T7 | 6~7h | Zeineb Mokded + autres membres |
-| **T10** | **Rédaction et mise en forme du Compte Rendu 3**<br>• Création du rapport: détails sur les différents modules du projet et sur les interactions que ces modules ont avec le reste de l'application | Indispensable | Moyenne | ? | 4~5h | Zeineb Mokded ou Hans Vinçon |
+| **T10** | **Rédaction et mise en forme du Compte Rendu 3**<br>• Création du rapport: détails sur les différents modules du projet et sur les interactions que ces modules ont avec le reste de l'application | Indispensable | Moyenne | T8 | 4~5h | Zeineb Mokded ou Hans Vinçon |
 | **T11** | **Réunion finale et validation CR3**<br>• Relecture collective, mise à jour du GitHub Project, lecture et validation par tous les membres du CR3| Basse | Basse | T10 | 1 h 30 | Tous les membres |
