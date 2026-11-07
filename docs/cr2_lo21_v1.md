@@ -53,10 +53,10 @@ L'architecture du projet étant établie, un travail de programmation considéra
 
 * **Ulysse Virlogeux--Chabaille** : Annonce des tâches à réaliser à travers Discord et organisation du projet. L'implication dans la programmation n'as pas non plus été négligé puisqu'il est celui qui s'est chargé de la création du .h de carte et de la plus part de ses dépendances.
 * **Hans Vinçon** : Développement de l'UML. Déclaration et définition des classes filles de la classe Carte. 
-* **Victor Pottier** : Rédaction du compte-rendu. Ne disposant pas de Visual Studio ni de CodeBlocks sur son ordinateur personnel, des installations seront à prévoir rapidement en anticipation du fort travail de programmation qui devra être réalisé. Peu de travail de conception fourni pendant les vacances mais un plus grand effort sera fourni pendant la 3e phase du projet.
+* **Victor Pottier** : Rédaction du compte-rendu. Ne disposant pas de Visual Studio ni de CodeBlocks sur son ordinateur personnel, des installations seront à prévoir rapidement en anticipation du fort travail de programmation qui devra être réalisé.
 * **Zeineb Mokded** : Travail sur l'UML et les déclaration de classes. Un travail à distanciel est à noter.
 
-Bilan : très bonne entente du groupe, la prise de décision peut toutefois être ralentie du fait des médians reporté plusieurs fois et des priorités de chacun. Une solide base organisationnelle a été posée, ce qui facilitera la programmation plus poussée du projet.
+Bilan : très bonne entente du groupe, la prise de décision peut toutefois être ralentie du fait des médians reportés plusieurs fois et des priorités de chacun. Une solide base organisationnelle a été posée, ce qui facilitera la programmation plus poussée du projet.
 
 ---
 
@@ -65,7 +65,37 @@ Bilan : très bonne entente du groupe, la prise de décision peut toutefois êtr
 
 Le point le plus important concerne la définition plus poussée de l'architecture théorique du projet.
 
-En effet, l'UML associé à cette architecture a été davantage détaillé lors de cette 2e phase du projet. Notamment, les associations et les héritages entre les classes du projet ont été proprement explicités. 
+En effet, l'UML associé à cette architecture a été davantage détaillé lors de cette 2e phase du projet. Notamment, les associations et les héritages entre les classes du projet ont été proprement explicités.
+
+Pour réaliser ce diagramme UML nous nous sommes inspirés du TD SET. 
+Voici une description détaillée des différentes relations entre les classes : 
+
+* Compositions :
+    * Les **CarteDePLacement** (**CarteDorure**, **CarteRessource**, **CarteDepart**) possèdent des coins vides ou remplis. De plus, nous considérons que la **CarteDePlacement** est responsable du cycle de vie. Nous avons donc choisis de créer une composition entre **CarteDePlacement** et **Coins**. La cardinalité est 4 du côté de **Coins** et 1 du côté de **CartePlacement** puisque nous considérons qu’un **Coin** est forcément associé à une seule et unique carte.
+    * La classe **Plateau** compose la classe **Joueur**. Nous avons choisis que **Plateau** ne pouvait pas vivre indépendamment de la classe **Joueur**.
+    * Un objet **CartePlacee** est placé sur un objet **Plateau**, il ne peut donc pas exister sans le plateau associé, d’où la relation de composition entre **Plateau** et **CartePlacee**.
+    * L’objet **Manager** est un objet particulier qui contrôle le déroulement de la partie. Une de ses tâches est de notamment assurer la destruction de tous les objets instanciés nécessaires pour jouer la partie une fois que cette dernière se termine. Ainsi, **Manager** gère le cycle de vie des classes **Jeu, PiocheRessource, PiocheDepart, PiocheObjectif, PiocheDorure**, et **Joueur**, impliquant une relation de composition avec ces classes. La destruction de ces classes suffit pour détruire tous les objets du jeu grâce aux autres compositions que nous avons défini.
+    * L’objet **Tybor** est instancié uniquement en mode solo et doit, comme tous les autres objets, être détruit en fin de partie via la classe **Manager**. Ainsi, il existe une relation de composition entre le **Manager** particulier **ManagerSolo** et la classe **Tybor**.
+
+
+* Agrégations  :
+    * Etant donné que les pioches contiennent des cartes mais que le cycle de vie de celles-ci est géré par la classe Jeu, les classes pioches **PiocheRessource**, **PiocheDorure**, **PiocheDepart**, et **PiocheObjectif** sont liés par une agrégation avec les classes **CarteRessource**, **CarteDorure**, **CarteDepart** et **CarteObjectif** respectivement.
+    * La classe **Joueur** possède une main de cartes de placement, c’est donc une relation d’agrégation qui lie la classe **Joueur** à la classe **CarteDePlacement**
+
+* Héritage : 
+    * Les classes **CarteRessource**, **CarteDorure** et **CarteDepart** sont des cartes de placement particulières, elles héritent donc de la classe abstraite **CarteDePlacement**. 
+    * La classe abstraite **CarteDePlacement** est elle même une carte, donc elle hérite d’une classe plus générale Carte, tout comme la classe **CarteObjectif**.
+    * De manière similaire, les classes PiocheRessource, **PiocheDorure**, **PiocheDepart**, et **piocheObjectif** sont des pioches particulières, elles héritent donc de la classe abstraite Pioche.
+    * Enfin, vu que deux modes de jeu sont disponibles (solo ou multijoueur), on divise la classe Manager en 2 sous-classes pour chacun des 2 modes de jeu : **ManagerMulti** et **ManagerSolo** héritent donc de la classe **Manager**.
+
+* Associations simples : les classes suivantes ne sont pas liées par une relation de possession, ce sont donc des associations simples et non des agrégations :
+    * Un **Coin** _contient_ éventuellement une **Ressource** ou un **Objet**
+    * De même les classes **CarteDorure** et **CarteObjectif** _contiennent_ une **ConditionScore**
+    * Une **CartePlacee** _référence_ une **CarteDePlacement**
+    * La classe **Manager** _rend visible_ deux instances de chacune des classes CarteRessource, CarteDorure, et CarteObjectif
+
+**!!!TODO : Quelle association entre Joueur et CarteObjectif?!!!!!**
+
 
 Grâce à cet UML, nous avons ensuite pu débuter la programmation du projet, en implémentant concrètement l'architecture théorique, c'est-à-dire en définissant le "squelette" des classes décrites dans l'UML. Plus particulièrement, nous avons déclaré et défini plusieurs classes fondamentales telles que Carte, Player, Manager, Pioche, etc.
 
