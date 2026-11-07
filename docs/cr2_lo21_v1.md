@@ -1,6 +1,3 @@
-
-**!!!TODO : inclure screens Github, discord, UML, etc, tout ce puisse paraître pertinent. Ce CR est uniquement une première version, sa vocation est d'être modifié.!!!!**
-
 # Compte Rendu 2 - Projet Codex Naturalis
 
 **Date de rendu :** Semaine du 3 novembre  
@@ -93,9 +90,7 @@ Voici une description détaillée des différentes relations entre les classes :
     * De même les classes **CarteDorure** et **CarteObjectif** _contiennent_ une **ConditionScore**
     * Une **CartePlacee** _référence_ une **CarteDePlacement**
     * La classe **Manager** _rend visible_ deux instances de chacune des classes CarteRessource, CarteDorure, et CarteObjectif
-
-**!!!TODO : Quelle association entre Joueur et CarteObjectif?!!!!!**
-La classe Joueur est associée à une CarteObjectif correspondant à son objectif secret. Nous avons choisi une association simple, car le joueur conserve une référence vers cette carte sans être responsable de sa destruction. 
+    * La classe Joueur est associée à une CarteObjectif correspondant à son objectif secret. Nous avons choisi une association simple, car le joueur conserve une référence vers cette carte sans pour autant que cela soit une relation de possession. 
 
 Grâce à cet UML, nous avons ensuite pu débuter la programmation du projet, en implémentant concrètement l'architecture théorique, c'est-à-dire en définissant le "squelette" des classes décrites dans l'UML. Plus particulièrement, nous avons déclaré et défini plusieurs classes fondamentales telles que Carte, Player, Manager, Pioche, etc.
 
@@ -115,8 +110,6 @@ Une architecture détaillée ayant été dévéloppée au cours de la phase 2, l
 On retrouvera ci-dessous un descriptif détaillé des tâches à anticiper au cours de la prochaine phase.
 
 #### Tableau prévisionnel des tâches jusqu'au CR3
-
-**A NOTER : les affectations sont pour l'instant arbitraires, chacun peut modifier ses tâches selon sa volonté. En particulier, certaines tâches affectées à "Tous les membres" peuvent avoir un responsable désigné.**
 
 | ID | Tâche / Sous-tâche | Priorité | Complexité | Dépendances | Durée estimée | Responsable (Affectation a priori) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
