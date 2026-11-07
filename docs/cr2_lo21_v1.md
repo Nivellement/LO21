@@ -45,12 +45,12 @@ L'architecture du projet étant établie, un travail de programmation considéra
 
 **!!!!ICI remplissez vous-même la partie qui vous concerne, j'ai écrit vite fait quelques idées rapides mais vous être libres et responsables de modifier et ré-écrire proprement tout ce qui vous concerne!!!!!**
 
-* **Ulysse Virlogeux--Chabaille** : Annonce des tâches à réaliser à travers Discord et organisation du projet. Une meilleur présence est à noter suite à la fin de la maladie.
+* **Ulysse Virlogeux--Chabaille** : Annonce des tâches à réaliser à travers Discord et organisation du projet. L'implication dans la programmation n'as pas non plus été négligé puisqu'il est celui qui s'est chargé de la création du .h de carte et de la plus part de ses dépendances.
 * **Hans Vinçon** : Développement de l'UML et bonne implication dans le projet pendant les vacances. 
 * **Victor Pottier** : Rédaction du compte-rendu. Ne disposant pas de Visual Studio ni de CodeBlocks sur son ordinateur personnel, des installations seront à prévoir rapidement en anticipation du fort travail de programmation qui devra être réalisé. Peu de travail de conception fourni pendant les vacances mais un plus grand effort sera fourni pendant la 3e phase du projet.
 * **Zeineb Mokded** : Travail sur l'UML et les déclaration de classes. Un travail à distanciel est à noter.
 
-Bilan : très bonne entente du groupe, la prise de décision peut toutefois être ralentie du fait des occasionnelles difficultés à se mettre d'accord. Une solide base organisationnelle a été posée, ce qui facilitera la programmation plus poussée du projet.
+Bilan : très bonne entente du groupe, la prise de décision peut toutefois être ralentie du fait des médians reporté plusieurs fois et des priorités de chacun. Une solide base organisationnelle a été posée, ce qui facilitera la programmation plus poussée du projet.
 
 ---
 
@@ -65,7 +65,8 @@ Grâce à cet UML, nous avons ensuite pu débuter la programmation du projet, en
 
 Par rapport à la précédente phase, une meilleure organisation et une meilleure communication ont également été mises en place grâce à une séparation concrète des différents thèmes de discussion, ainsi qu'un système d'annonce des tâches à réaliser de manière imminente (système de tickets). Nous avons également approfondi l'utilisation de l'environnement Github afin de maintenir une bonne vision sur l'historique du projet, son avancement, les tâches réalisées au cours du temps, la répartition des tâches, etc.
 
-**!!!Ici, éventuellement inclure des captures d'écran du Github, du Discord, etc. Je ne sais pas le faire en Markdown et je n'ai pas trop d'idées de ce qu'on souhaite voir apparaître!!!**
+![alt text](image.png)
+![alt text](image-1.png)
 
 ---
 
