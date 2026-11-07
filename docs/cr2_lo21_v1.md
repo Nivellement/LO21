@@ -54,7 +54,7 @@ L'architecture du projet étant établie, un travail de programmation considéra
 * **Ulysse Virlogeux--Chabaille** : Annonce des tâches à réaliser à travers Discord et organisation du projet. L'implication dans la programmation n'as pas non plus été négligé puisqu'il est celui qui s'est chargé de la création du .h de carte et de la plus part de ses dépendances.
 * **Hans Vinçon** : Développement de l'UML. Déclaration et définition des classes filles de la classe Carte. 
 * **Victor Pottier** : Rédaction du compte-rendu. Ne disposant pas de Visual Studio ni de CodeBlocks sur son ordinateur personnel, des installations seront à prévoir rapidement en anticipation du fort travail de programmation qui devra être réalisé.
-* **Zeineb Mokded** : Travail sur l'UML et les déclaration de classes. Un travail à distanciel est à noter.
+* **Zeineb Mokded** :Participation à l'amélioration et à la mise à jour du diagramme UML, notamment pour mieux représenter les mécanismes du jeu et faciliter son implémentation. Développement de la classe CarteObjectif et  de l'énumération TypeObjectif, ainsi que de la structure abstraite ConditionScore.
 
 Bilan : très bonne entente du groupe, la prise de décision peut toutefois être ralentie du fait des médians reportés plusieurs fois et des priorités de chacun. Une solide base organisationnelle a été posée, ce qui facilitera la programmation plus poussée du projet.
 
@@ -95,7 +95,7 @@ Voici une description détaillée des différentes relations entre les classes :
     * La classe **Manager** _rend visible_ deux instances de chacune des classes CarteRessource, CarteDorure, et CarteObjectif
 
 **!!!TODO : Quelle association entre Joueur et CarteObjectif?!!!!!**
-
+La classe Joueur est associée à une CarteObjectif correspondant à son objectif secret. Nous avons choisi une association simple, car le joueur conserve une référence vers cette carte sans être responsable de sa destruction. 
 
 Grâce à cet UML, nous avons ensuite pu débuter la programmation du projet, en implémentant concrètement l'architecture théorique, c'est-à-dire en définissant le "squelette" des classes décrites dans l'UML. Plus particulièrement, nous avons déclaré et défini plusieurs classes fondamentales telles que Carte, Player, Manager, Pioche, etc.
 
