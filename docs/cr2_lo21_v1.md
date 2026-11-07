@@ -17,6 +17,12 @@
 
 L'objectif principal est de définir une architecture théorique suffisamment complète pour permettre, durant la phase 3, d'implémenter un premier prototype de Codex Naturalis jouable sur terminal.
 
+### 1.1 Description de l'architecture UML
+Pour réaliser cette UML nous nous sommes inspirer du TD SET.
+
+
+### 1.2 Tableau récapitulatif des tâches réalisées
+
 | ID | Tâche Macro | Complexité estimée | Durée estimée | Responsable (Affectation a priori) | Date de réalisation
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | T1 | Définition plus approfondie de l'UML décrivant l'architecture du projet | Élevée | 4h | Hans Vinçon - Zeineb Mokded | 19/10/2026
