@@ -2,11 +2,12 @@
 
 **Date de rendu :** Semaine du 3 novembre  
 **Auteur responsable du livrable :** Victor Pottier<br>
-**Membres du groupe :**
-1. Ulysse Virlogeux--Chabaille
-2. Hans Vinçon
-3. Victor Pottier
-4. Zeineb Mokded
+<br>
+**Membres du groupe :**<br>
+1. Ulysse Virlogeux--Chabaille<br>
+2. Hans Vinçon<br>
+3. Victor Pottier<br>
+4. Zeineb Mokded<br>
 
 ---
 
@@ -45,8 +46,6 @@ Les mouvements sociaux et le report des examens médians ont généré une press
 L'architecture du projet étant établie, un travail de programmation considérable reste à faire jusqu'au prochain compte-rendu.
 
 **Implication des membres :**
-
-**!!!!ICI remplissez vous-même la partie qui vous concerne, j'ai écrit vite fait quelques idées rapides mais vous être libres et responsables de modifier et ré-écrire proprement tout ce qui vous concerne!!!!!**
 
 * **Ulysse Virlogeux--Chabaille** : Annonce des tâches à réaliser à travers Discord et organisation du projet. L'implication dans la programmation n'as pas non plus été négligé puisqu'il est celui qui s'est chargé de la création du .h de carte et de la plus part de ses dépendances.
 * **Hans Vinçon** : Développement de l'UML. Déclaration et définition des classes filles de la classe Carte. 
@@ -114,7 +113,7 @@ On retrouvera ci-dessous un descriptif détaillé des tâches à anticiper au co
 | ID | Tâche / Sous-tâche | Priorité | Complexité | Dépendances | Durée estimée | Responsable (Affectation a priori) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **T1** | **Programmation du squelette de toutes les classes restantes (fichiers .h)**<br>•Besoin de définir classes Position, CartePlacee, CarteDorure, PiocheDorure, etc. | Indispensable | Moyenne | Aucune | 2h | Tous les membres |
-| **T2** | **Fonctionnalités de la classe Plateau***<br>• La méthode peutAjouter vérifiant la permission de placement d'une carte nécessite une attention particulière, l'affichage avec print() est également à considérer | Indispensable | Haute | T1 | 5~6h | Victor Pottier |
+| **T2** | **Fonctionnalités de la classe Plateau**<br>• La méthode peutAjouter vérifiant la permission de placement d'une carte nécessite une attention particulière, l'affichage avec print() est également à considérer | Indispensable | Haute | T1 | 5~6h | Victor Pottier |
 | **T3** | **Fonctionnalités de la classe Joueur**<br>• Fonctionnalité de calcul du score particulièrement complexe | Indispensable | Haute | T2 | 5~6h | Ulysse Virlogeux--Chabaille |
 | **T4** | **Instanciation de toutes les cartes du jeu**<br>• Toutes les cartes du jeu original doivent être instanciées, ce sera un procédé répétitif mais nécessaire pour la définition du constructeur Jeu(). A noter que ces cartes seront sûrement stockées dans une base de données par la suite. | Moyenne | Basse | T1 | 1~2h | Victor Pottier |
 | **T5** | **Fonctionnalités de la classe Jeu**<br>• Une attention particulière sera portée sur la définition du constructeur Jeu(). | Indispensable | Moyenne | T4 | 2~3h | Tous les membres |
