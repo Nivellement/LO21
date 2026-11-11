@@ -1,10 +1,9 @@
 #include "CarteObjectif.h"
 
-namespace Codex {
 
 CarteObjectif::CarteObjectif(
     int i,
-    const ConditionScore* condition,
+    const Codex::ConditionScore* condition,
     int p,
     TypeObjectif t
 ) : Carte(i), conditionScore(condition), points(p), type(t) {}
@@ -15,4 +14,3 @@ void CarteObjectif::afficher(std::ostream& f) const {
     f << "), " << points << " points";
 }
 
-}
