@@ -103,7 +103,7 @@ ostream& operator<<(ostream& f, const CartePlacement& cp);
 
     };
 
- 
+
 
 }
 

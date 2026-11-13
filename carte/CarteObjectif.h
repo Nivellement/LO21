@@ -2,9 +2,10 @@
 #define CARTEOBJECTIF_H
 
 #include "Carte.h"
+#include "CarteObjectif.h"
 #include "ConditionScore.h"
 
-namespace Codex {
+using namespace Codex;
 
 enum class TypeObjectif {
     SECRET,
@@ -36,6 +37,5 @@ public:
     void afficher(std::ostream& f) const override;
 };
 
-}
 
 #endif
