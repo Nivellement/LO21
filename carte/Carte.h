@@ -24,8 +24,17 @@ using namespace std;
  * Chaque carte est unique : on interdit donc de la dupliquer.
  */
 
+enum class Face {Recto, Verso}; //A discuter mais permet de savoir dans Plateau si la carte place est sur sa face recto ou verso
+
 namespace Codex {
 
+    class CarteException {
+        string info;
+
+        public:
+        CarteException(const string& i) : info(i){}
+        const string& getInfo() const { return info;}
+    };
     class Carte {
     protected:
         int id;   // identifiant de la carte (unique dans le jeu)
@@ -73,14 +82,12 @@ namespace Codex {
         Coin milieuRecto;
 
     public :
-        CartePlacement(int i, const string& c, const Coin& vhg, const Coin& vhd, const Coin& vbg, const Coin& vbd
-        , const Coin& rhg, const Coin& rhd, const Coin& rbg, const Coin& rbd, const Coin& vm, const Coin& rm); // v = verso, r = recto, h = haut, g = gauche, d = droit
+        CartePlacement(const int i, const string& c, Coin& vhg, Coin& vhd, Coin& vbg, Coin& vbd
+        , Coin& rhg, Coin& rhd, Coin& rbg, Coin& rbd, Coin& vm, Coin& rm); // v = verso, r = recto, h = haut, g = gauche, d = droit
+        //L'attribut position des coins est instancie dans le constructeur de CartePlacement
 
         const string& getCouleur() const {return couleur;}
-        const Coin& getCoinVerso(int position) const { return verso[position];}
-        const Coin& getCoinRecto(int position) const { return recto[position];}
-        const Coin& getMilieuVerso() const { return milieuVerso;}
-        const Coin& getMilieuRecto() const { return milieuRecto;}
+        const Coin& getCoin(Position p, Face f) const ; //Permet de renvoyer n'importe quel coin (meme les coins du milieu)
 
     };
 
@@ -90,16 +97,16 @@ ostream& operator<<(ostream& f, const CartePlacement& cp);
     class CarteDepart : public CartePlacement {
 
     public :
-        CarteDepart(int i, const string& c, const Coin& vhg, const Coin& vhd, const Coin& vbg, const Coin& vbd
-        , const Coin& rhg, const Coin& rhd, const Coin& rbg, const Coin& rbd, const Coin& vm, const Coin& rm) : CartePlacement(i, c, vhg, vhd, vbg, vbd, rhg, rhd, rbg, rbd, vm, rm){}
+        CarteDepart(const int i, const string& c, Coin& vhg, Coin& vhd, Coin& vbg, Coin& vbd
+        , Coin& rhg, Coin& rhd, Coin& rbg, Coin& rbd, Coin& vm, Coin& rm) : CartePlacement(i, c, vhg, vhd, vbg, vbd, rhg, rhd, rbg, rbd, vm, rm){}
 
     };
 
     class CarteRessource : public CartePlacement {
 
     public :
-        CarteRessource(int i, const string& c, const Coin& vhg, const Coin& vhd, const Coin& vbg, const Coin& vbd
-        , const Coin& rhg, const Coin& rhd, const Coin& rbg, const Coin& rbd, const Coin& vm, const Coin& rm) : CartePlacement(i, c, vhg, vhd, vbg, vbd, rhg, rhd, rbg, rbd, vm, rm){}
+        CarteRessource(const int i, const string& c, Coin& vhg, Coin& vhd, Coin& vbg, Coin& vbd
+        , Coin& rhg, Coin& rhd, Coin& rbg, Coin& rbd, Coin& vm, Coin& rm) : CartePlacement(i, c, vhg, vhd, vbg, vbd, rhg, rhd, rbg, rbd, vm, rm){}
 
     };
 
