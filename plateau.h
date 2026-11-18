@@ -12,8 +12,18 @@ class Plateau {
 
     public :
     explicit Plateau(const Codex::CarteDepart& cd, Face f);
-    std::vector<Position> positionAjoutPossible(const Codex::CartePlacement& cd, Face f);
-    void ajouterCarte(const Codex::CartePlacement& c, Face f, const int& i, const int& j);
+    bool peutAjouterCarte(const Codex::CartePlacement& cd, Face f, const size_t& i, const size_t& j) const;
+    bool verifInsereHG(const Codex::CartePlacement& cAjouter, const Face& f, const size_t& i, const size_t& j) const;
+    bool verifInsereHD(const Codex::CartePlacement& cAjouter, const Face& f, const size_t& i, const size_t& j) const;
+    bool verifInsereBG(const Codex::CartePlacement& cAjouter, const Face& f, const size_t& i, const size_t& j) const;
+    bool verifInsereBD(const Codex::CartePlacement& cAjouter, const Face& f, const size_t& i, const size_t& j) const;
+    void insererHG(const Codex::CartePlacement& c, Face f, const size_t& i, const size_t& j);
+    void insererHD(const Codex::CartePlacement& c, Face f, const size_t& i, const size_t& j);
+    void insererBG(const Codex::CartePlacement& c, Face f, const size_t& i, const size_t& j);
+    void insererBD(const Codex::CartePlacement& c, Face f, const size_t& i, const size_t& j);
+
+    void ajouterCarte(const Codex::CartePlacement& c, Face f, const size_t& i, const size_t& j);
+
 };
 
 
