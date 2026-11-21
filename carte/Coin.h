@@ -15,21 +15,28 @@
  * adresse. Les objets Ressource / Objet passés au constructeur doivent donc
  * exister plus longtemps que le coin (pas de temporaire).
  */
+enum class Position {NaN, HG, HD, M, BG, BD};//Pour donner la position d'un coin sur une carte
+//ATTENTION : l'attribut position de coin est instancie a la creation de la carte
+//+ Utiliser en parametre a la palce de int position pour renvoyer un coin precis de la partie verso ou recto d'une carte
+
 
 namespace Codex {
 
     class Coin {
+        friend class CartePlacement;
     private:
-        const Ressource* ressource;   // nullptr si le coin ne contient pas de ressource
-        const Objet* objet;           // nullptr si le coin ne contient pas d'objet
+        RessourceType ressource;   // nullptr si le coin ne contient pas de ressource
+        Objet* objet;           // nullptr si le coin ne contient pas d'objet
+        Position position;            // position ne sera instancie que lorsque est asscoie a une carte (et donc a un coin)
+        void setPosition(const Position& p) {position = p;} //Placee dans la partie private car on souhaite que seul CartePlacement puisse instancier l'attribut
 
     public:
         // Coin vide
-        Coin() : ressource(nullptr), objet(nullptr) {}
+        explicit Coin() : ressource(RessourceType::NaN), objet(nullptr), position(Position::NaN) {}
 
         // Coin un constructeur pour chaque possibilité de coin faisable. Le bon sera appeler automatiquement.
-        explicit Coin(const Ressource& r) : ressource(&r), objet(nullptr) {}
-        explicit Coin(const Objet& o) : ressource(nullptr), objet(&o) {}
+        explicit Coin(const RessourceType& r) : ressource(r), objet(nullptr), position(Position::NaN) {}
+        explicit Coin(Objet& o) : ressource(RessourceType::NaN), objet(&o), position(Position::NaN) {}
 
         // Truc qui sera sûrement utile
         bool estVide() const;
@@ -37,8 +44,9 @@ namespace Codex {
         bool aObjet() const;
 
         // Accesseurs **en lecture uniquement**: renvoient nullptr si le coin ne contient pas ce type d'élément
-        const Ressource* getRessource() const {return ressource;}
+        const RessourceType& getRessource() const {return ressource;}
         const Objet* getObjet() const {return objet;};
+        Position getPosition() const {return position;}
     };
 
     std::ostream& operator<<(std::ostream& f, const Coin& c);
